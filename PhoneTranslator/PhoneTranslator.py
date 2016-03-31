@@ -28,7 +28,7 @@ if __name__ == "__main__":
         index += 1
         nums = [int(i.strip()) for i in phonum.split(",")]
         # Select file to output to:
-        output_file = open(filename.format(digits = ''.join(nums), index = index), "a+") if filename\
+        output_file = open(filename.format(digits = ''.join(str(i) for i in nums), index = str(index)), "a+") if filename\
             else sys.stdout
         # Translate and output:
         all, notable = translate(*nums)
